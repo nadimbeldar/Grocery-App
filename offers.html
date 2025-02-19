@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers - QuickMart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function countdownTimer(endTime, elementId) {
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById(elementId).innerHTML = "Offer Expired!";
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(elementId).innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const offerEndTime = new Date().getTime() + 86400000; // 24 hours from now
+            countdownTimer(offerEndTime, "countdown");
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-red-500 p-4 flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-white text-xl font-bold">QuickMart</h1>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <!-- Home Tab -->
+            <a class="text-white hover:underline" href="index.html">Home</a>
+
+            <!-- Shop Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Shop
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="categories.html">Categories</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="nearby-stores.html">Nearby Stores</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="offers.html">Offers & Discounts</a>
+                </div>
+            </div>
+
+            <!-- My Account Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    My Account
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="login.html#">Login/Signup</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="profile.html#">Profile</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="orders.html">My Orders</a>
+                </div>
+            </div>
+
+            <!-- Help Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Help
+                </button>
+                <div
+                    class="absolute right-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">Contact Us</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">FAQs</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Offer Card -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <h3 class="text-xl font-semibold mb-2">Flat 20% off on Dairy Products</h3>
+                <p class="text-gray-600 mb-4">Limited Time Offer!</p>
+                <p class="text-red-500 font-bold mb-4" id="countdown">Loading...</p>
+                <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">Shop Now</a>
+            </div>
+            <!-- Add more offers as needed -->
+        </div>
+    </main>
+</body>
+
+</html>

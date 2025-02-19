@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - QuickMart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showAlert() {
+            alert("Your changes have been saved successfully!");
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-red-500 p-4 flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-white text-xl font-bold">QuickMart</h1>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <!-- Home Tab -->
+            <a class="text-white hover:underline" href="index.html">Home</a>
+
+            <!-- Shop Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Shop
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="categories.html">Categories</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="nearby-stores.html">Nearby Stores</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="offers.html">Offers & Discounts</a>
+                </div>
+            </div>
+
+            <!-- My Account Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    My Account
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="login.html#">Login/Signup</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="profile.html#">Profile</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="orders.html">My Orders</a>
+                </div>
+            </div>
+
+            <!-- Help Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Help
+                </button>
+                <div
+                    class="absolute right-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">Contact Us</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">FAQs</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden bg-red-500 text-white p-4 space-y-2 md:hidden">
+        <a class="block hover:underline" href="#">Home</a>
+        <a class="block hover:underline" href="categories.html">Categories</a>
+        <a class="block hover:underline" href="profile.html#">Profile</a>
+        <a class="block hover:underline" href="contact.html">Contact Us</a>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg mt-8">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">My Profile</h1>
+
+        <form id="profile-form" class="space-y-6" onsubmit="event.preventDefault(); showAlert();">
+            <!-- Name -->
+            <div>
+                <label for="name" class="block text-gray-600 mb-2">Full Name</label>
+                <input type="text" id="name" class="w-full border border-gray-300 p-2 rounded-lg"
+                    placeholder="Enter your full name">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-gray-600 mb-2">Email Address</label>
+                <input type="email" id="email" class="w-full border border-gray-300 p-2 rounded-lg"
+                    placeholder="Enter your email">
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <label for="phone" class="block text-gray-600 mb-2">Phone Number</label>
+                <input type="tel" id="phone" class="w-full border border-gray-300 p-2 rounded-lg"
+                    placeholder="Enter your phone number">
+            </div>
+
+            <!-- Addresses -->
+            <h3 class="text-lg font-semibold text-gray-700 mt-6">Saved Addresses:</h3>
+            <div class="space-y-4">
+                <div>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded-lg" placeholder="Address 1">
+                </div>
+                <div>
+                    <input type="text" class="w-full border border-gray-300 p-2 rounded-lg" placeholder="Address 2">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-6">
+                <button type="submit" class="block w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Save
+                    Changes</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMart Navbar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: url('https://plus.unsplash.com/premium_photo-1663011122314-ed94208842d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* High-quality grocery image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .absolute.inset-0 {
+            z-index: 0;
+            /* Lower z-index for the overlay */
+        }
+
+        nav .relative div {
+            z-index: 20;
+            /* Higher z-index for the dropdown menus */
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="bg-red-500 p-4 flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-white text-xl font-bold">QuickMart</h1>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <!-- Home Tab -->
+            <a class="text-white hover:underline" href="#">Home</a>
+
+            <!-- Shop Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Shop
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="categories.html">Categories</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="nearby-stores.html">Nearby Stores</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="offers.html">Offers & Discounts</a>
+                </div>
+            </div>
+
+            <!-- My Account Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    My Account
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="login.html#">Login/Signup</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="profile.html#">Profile</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="orders.html">My Orders</a>
+                </div>
+            </div>
+
+            <!-- Help Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Help
+                </button>
+                <div
+                    class="absolute right-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">Contact Us</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">FAQs</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex flex-col justify-center items-center text-center text-white relative">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                Empowering Local Grocery Stores, One Delivery at a Time
+            </h1>
+            <p class="text-lg md:text-xl mb-8">
+                Get groceries delivered in 10-15 minutes. Supporting women-centric initiatives and your neighborhood
+                stores.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex justify-center space-x-6">
+                <a href="#"
+                    class="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-lg">
+                    Order Now
+                </a>
+                <a href="#"
+                    class="bg-white text-red-500 hover:bg-gray-100 py-3 px-6 rounded-lg text-lg font-semibold shadow-lg">
+                    Register Your Shop
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Stores Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Nearby Stores at Your Service</h2>
+
+            <!-- Stores Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Store Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Fresh Mart</h3>
+                    <p class="text-gray-600 mb-4">Rating: ⭐⭐⭐⭐☆</p>
+                    <p class="text-gray-600 mb-4">Delivery Time: 15 mins</p>
+                    <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">Explore Store</a>
+                </div>
+
+                <!-- Store Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Green Grocers</h3>
+                    <p class="text-gray-600 mb-4">Rating: ⭐⭐⭐⭐⭐</p>
+                    <p class="text-gray-600 mb-4">Delivery Time: 10 mins</p>
+                    <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">Explore Store</a>
+                </div>
+
+                <!-- Store Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Local Basket</h3>
+                    <p class="text-gray-600 mb-4">Rating: ⭐⭐⭐⭐☆</p>
+                    <p class="text-gray-600 mb-4">Delivery Time: 20 mins</p>
+                    <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">Explore Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Categories Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Shop by Categories</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <!-- Fruits & Vegetables -->
+                <a href="fruits-vegetables.html"
+                    class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Fruits & Vegetables" class="mb-4 w-20 h-20">
+                    <h3 class="font-semibold">Fruits & Vegetables</h3>
+                </a>
+
+                <!-- Dairy Products -->
+                <a href="dairy-products.html"
+                    class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <img src="https://plus.unsplash.com/premium_photo-1664391718852-4631572e3fec?q=80&w=1512&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Dairy Products" class="mb-4 w-20 h-20">
+                    <h3 class="font-semibold">Dairy Products</h3>
+                </a>
+
+                <!-- Snacks & Beverages -->
+                <a href="snacks-beverages.html"
+                    class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <img src="https://plus.unsplash.com/premium_photo-1695558759515-2ef6bad34d24?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Snacks & Beverages" class="mb-4 w-20 h-20">
+                    <h3 class="font-semibold">Snacks & Beverages</h3>
+                </a>
+
+                <!-- Household Essentials -->
+                <a href="household-essentials.html"
+                    class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <img src="https://plus.unsplash.com/premium_photo-1679920026812-d9b1ec223018?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Household Essentials" class="mb-4 w-20 h-20">
+                    <h3 class="font-semibold">Household Essentials</h3>
+                </a>
+
+                <!-- Grains & Pulses -->
+                <a href="grains-pulses.html"
+                    class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <img src="https://images.unsplash.com/photo-1705475388190-775066fd69a5?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Grains & Pulses" class="mb-4 w-20 h-20">
+                    <h3 class="font-semibold">Grains & Pulses</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Offers & Discounts Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 text-black">Exclusive Offers for You</h2>
+
+
+            <!-- Discounts Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Offer Card -->
+                <div class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <h3 class="font-bold text-lg mb-2 text-red-500">Flat 20% Off</h3>
+                    <p class="text-gray-700 mb-4">On Dairy Products</p>
+                    <span class="bg-red-500 text-white py-1 px-3 rounded-full text-sm">Limited Time</span>
+                </div>
+
+                <!-- Offer Card -->
+                <div class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <h3 class="font-bold text-lg mb-2 text-red-500">Buy 1 Get 1 Free</h3>
+                    <p class="text-gray-700 mb-4">On Snacks & Beverages</p>
+                    <span class="bg-red-500 text-white py-1 px-3 rounded-full text-sm">Today Only</span>
+                </div>
+
+                <!-- Offer Card -->
+                <div class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <h3 class="font-bold text-lg mb-2 text-red-500">Up to 50% Off</h3>
+                    <p class="text-gray-700 mb-4">On Grains & Pulses</p>
+                    <span class="bg-red-500 text-white py-1 px-3 rounded-full text-sm">Hurry!</span>
+                </div>
+
+                <!-- Offer Card -->
+                <div class="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
+                    <h3 class="font-bold text-lg mb-2 text-red-500">Flat ₹100 Off</h3>
+                    <p class="text-gray-700 mb-4">On orders above ₹500</p>
+                    <span class="bg-red-500 text-white py-1 px-3 rounded-full text-sm">Limited Offer</span>
+                </div>
+            </div>
+
+            <!-- Limited Time Deals Section -->
+            <div class="mt-12">
+                <h3 class="text-3xl font-bold mb-8 text-black">Limited Time Deals</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Deal Card -->
+                    <div
+                        class="bg-white border border-gray-300 rounded-lg p-4 flex justify-between items-center shadow-md hover:shadow-lg transition">
+                        <div>
+                            <h4 class="text-lg font-bold text-red-500">Fresh Fruits</h4>
+                            <p class="text-gray-700">Flat 30% Off</p>
+                        </div>
+                        <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg text-sm">Shop
+                            Now</a>
+                    </div>
+
+                    <!-- Deal Card -->
+                    <div
+                        class="bg-white border border-gray-300 rounded-lg p-4 flex justify-between items-center shadow-md hover:shadow-lg transition">
+                        <div>
+                            <h4 class="text-lg font-bold text-red-500">Vegetables</h4>
+                            <p class="text-gray-700">Buy 2 Get 1 Free</p>
+                        </div>
+                        <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg text-sm">Shop
+                            Now</a>
+                    </div>
+
+                    <!-- Deal Card -->
+                    <div
+                        class="bg-white border border-gray-300 rounded-lg p-4 flex justify-between items-center shadow-md hover:shadow-lg transition">
+                        <div>
+                            <h4 class="text-lg font-bold text-red-500">Snacks & Beverages</h4>
+                            <p class="text-gray-700">Up to 40% Off</p>
+                        </div>
+                        <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg text-sm">Shop
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-red-500 text-white py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">FAQs</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                    <p>Email: <a href="mailto:info@quickmart.com" class="hover:underline">info@quickmart.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890" class="hover:underline">+1 234 567 890</a></p>
+                    <p>Address: 123 Main Street, City, Country</p>
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
+                    <p>Sign up for our newsletter to receive updates and exclusive offers:</p>
+                    <form class="mt-4">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-2 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-white">
+                        <button type="submit"
+                            class="w-full mt-3 bg-white text-red-500 py-2 px-4 rounded-lg font-semibold hover:bg-gray-100">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="mt-8 text-center text-sm">
+                <p>&copy; 2025 QuickMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

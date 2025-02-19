@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Stores - QuickMart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <script>
+        function initMap() {
+            const location = { lat: 37.7749, lng: -122.4194 }; // Example location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: location,
+            });
+
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Nearby Store",
+            });
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100" onload="initMap()">
+    <header class="bg-red-500 p-4 flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-white text-xl font-bold">QuickMart</h1>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <!-- Home Tab -->
+            <a class="text-white hover:underline" href="index.html">Home</a>
+
+            <!-- Shop Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Shop
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="categories.html">Categories</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="nearby-stores.html">Nearby Stores</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="offers.html">Offers & Discounts</a>
+                </div>
+            </div>
+
+            <!-- My Account Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    My Account
+                </button>
+                <div
+                    class="absolute left-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="login.html#">Login/Signup</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="profile.html#">Profile</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="orders.html">My Orders</a>
+                </div>
+            </div>
+
+            <!-- Help Dropdown -->
+            <div class="relative group">
+                <button class="text-white hover:underline focus:outline-none group-focus:outline-none">
+                    Help
+                </button>
+                <div
+                    class="absolute right-0 hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 w-48">
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">Contact Us</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">FAQs</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-black" href="#">About Us</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+ <!-- Featured Stores Section -->
+ <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+            Nearby Stores at Your Service
+        </h2>
+
+        <!-- Stores Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Store Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Fresh Mart</h3>
+                <p class="text-gray-600 text-sm mb-3">Rating: ⭐⭐⭐⭐☆</p>
+                <p class="text-gray-600 text-sm mb-4">Delivery Time: 15 mins</p>
+                <a href="#" class="mt-auto bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">
+                    Explore Store
+                </a>
+            </div>
+
+            <!-- Store Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Green Grocers</h3>
+                <p class="text-gray-600 text-sm mb-3">Rating: ⭐⭐⭐⭐⭐</p>
+                <p class="text-gray-600 text-sm mb-4">Delivery Time: 10 mins</p>
+                <a href="#" class="mt-auto bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">
+                    Explore Store
+                </a>
+            </div>
+
+            <!-- Store Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Local Basket</h3>
+                <p class="text-gray-600 text-sm mb-3">Rating: ⭐⭐⭐⭐☆</p>
+                <p class="text-gray-600 text-sm mb-4">Delivery Time: 20 mins</p>
+                <a href="#" class="mt-auto bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">
+                    Explore Store
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div id="map" class="w-full h-96 mb-8"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           
+             
+            
+        </div>
+    </main>
+</body>
+
+</html>
